@@ -2,23 +2,21 @@ package com.shaulin.crud.model;
 
 import jakarta.persistence.*;
 
-@Entity(name = "product")
-@Table(name = "product")
-public class Product {
+@Entity
+@Table(name = "groups")
+public class Group {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
-    private Long price;
 
-    public Product() {
+    public Group() {
     }
 
-    public Product(Integer id, String name, Long price) {
+    public Group(Integer id, String name) {
         this.id = id;
         this.name = name;
-        this.price = price;
     }
 
     public Integer getId() {
@@ -35,13 +33,5 @@ public class Product {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Long getPrice() {
-        return price;
-    }
-
-    public void setPrice(Long price) {
-        this.price = price;
     }
 }
